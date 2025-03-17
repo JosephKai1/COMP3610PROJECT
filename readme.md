@@ -1,3 +1,25 @@
+# Group Members
+- Saeed Khan (816035385)
+- Kailash Joseph (816034711)
+- Jonathan Mohammed (816036508)
+
+# Problem Statement
+With the growing popularity of e-commerce platforms, product reviews play an essential role in influencing purchasing decisions. The project aims to conduct a sentiment analysis of product reviews to determine the impact of reviews on market trends and customer satisfaction
+
+# Justification
+Understanding customer satisfaction based on product reviews can provide valuable feedback to businesses to improve products and services. Reviews also help other customers make more informed purchasing decisions by analysing the overall feeling surrounding a product. Businesses benefit from this by seeing trends based on the reviews left on products and can use this information to make educated decisions
+
+# Expected Outcomes
+- A sentiment analysis model capable of classifying reviews as positive or negative.
+- A web dashboard visualising sentiment trends and insights based on product reviews, providing product comparison and offering real-time insights for business decision-making.
+- A report detailing the methodology, model evaluation, and insights into customer satisfaction
+- Recommendations for improving product offerings based on review sentiment
+- Sentiment trends of different products over time would be shown
+- Analyze product categories to identify emerging market trends
+- Compare the sentiment between different brands for a competitive analysis
+
+
+<!--
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uwidcit/flaskmvc)
 <a href="https://render.com/deploy?repo=https://github.com/uwidcit/flaskmvc">
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
@@ -191,3 +213,4 @@ If you are running into errors in gitpod when updateding your github actions fil
 ## Database Issues
 
 If you are adding models you may need to migrate the database with the commands given in the previous database migration section. Alternateively you can delete you database file.
+-->
