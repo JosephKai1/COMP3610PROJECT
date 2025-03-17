@@ -17,7 +17,7 @@ Werkzeug==2.2.3
 gevent==22.10.2
 mysqlclient==2.1.1
 Flask-Admin==1.6.1
-numpy==2.2.4
+numpy==2.0.2
 pandas==2.2.3
 scikit-learn==1.6.1
 matplotlib==3.10.1
