@@ -1,3 +1,5 @@
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/BIG-DATA-PROJ/COMP3610)
+
 # Group Members
 - Saeed Khan (816035385)
 - Kailash Joseph (816034711)
