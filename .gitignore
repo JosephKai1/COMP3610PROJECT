@@ -154,3 +154,7 @@ cython_debug/
 #.idea/
 
 node_modules/
+
+
+# Dataset CSV
+amazon_reviews.csv
