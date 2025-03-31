@@ -1,22 +1,32 @@
 
-async function getUserData(){
-    const response = await fetch('/api/users');
-    return response.json();
-}
 
-function loadTable(users){
-    const table = document.querySelector('#result');
-    for(let user of users){
-        table.innerHTML += `<tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-        </tr>`;
-    }
-}
+// async function getUserData(){
+//     const response = await fetch('/api/users');
+//     return response.json();
+// }
 
-async function main(){
-    const users = await getUserData();
-    loadTable(users);
-}
+// function loadTable(users){
+//     const table = document.querySelector('#result');
+//     for(let user of users){
+//         table.innerHTML += `<tr>
+//             <td>${user.id}</td>
+//             <td>${user.username}</td>
+//         </tr>`;
+//     }
+// }
+
+// async function main(){
+//     const users = await getUserData();
+//     loadTable(users);
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+});
+
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
 
 main();
