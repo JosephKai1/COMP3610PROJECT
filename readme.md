@@ -3,7 +3,7 @@
 # Group Members
 - Saeed Khan (816035385)
 - Kailash Joseph (816034711)
-- Jonathan Mohammed (816036508)
+- Jonathan Mohammed (816036508) k
 
 # Problem Statement
 With the growing popularity of e-commerce platforms, product reviews play an essential role in influencing purchasing decisions. The project aims to conduct a sentiment analysis of product reviews to determine the impact of reviews on market trends and customer satisfaction
