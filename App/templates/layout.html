@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock %}</title>
+
+        {% block style %}{% endblock %}
     </head>
 
     <body>
@@ -15,24 +22,23 @@
                 <a href="#name"><span class="white-text name">John Doe</span></a>
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
             <li><div class="divider"></div></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="#!">Trends</a></li>
-            <li><a href="#!">Analysis</a></li>
+            <li><a class="waves-effect" href="/dashboard"><i class="material-icons">space_dashboard</i>Dashboard</a></li>
+            <li><a class="waves-effect" href="#!"><i class="material-icons">area_chart</i>Trends</a></li>
+            <li><a class="waves-effect" href="#!"><i class="material-icons">insert_chart</i>Analysis</a></li>
+            <li><div class="divider"></div></li>
             <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li><a class="waves-effect" href="#!"><i class="material-icons">cloud</i>Placeholder</a></li>
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
 
-        <div class="main-content">
-            <nav>
-                <h3>{% block page %}{% endblock %}</h3>
-            </nav>
-            
-            {% block content %}{% endblock %}
-        </div>
+        <main>
+            <div class="main-content">
+                <h4>{% block page %}{% endblock %}</h4>
+                
+                {% block content %}{% endblock %}
+            </div>
+        </main>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
