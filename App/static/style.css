@@ -19,3 +19,7 @@ header, main, footer {
         padding-left: 0;
     }
 }
+
+div {
+    padding-left: 40px;
+}

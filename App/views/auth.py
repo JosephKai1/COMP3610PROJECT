@@ -4,7 +4,7 @@ from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, se
 from App.controllers.user import get_all_users
 
 
-from.index import index_views
+from.dashboard import dashboard_views
 
 from App.controllers import (
     login
