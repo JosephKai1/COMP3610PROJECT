@@ -198,13 +198,13 @@ If your newly created views are returning 404 ensure that they are added to the 
 ```python
 from App.views import (
     user_views,
-    index_views
+    dashboard_views
 )
 
 # New views must be imported and added to this list
 views = [
     user_views,
-    index_views
+    dashboard_views
 ]
 ```
 
