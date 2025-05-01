@@ -23,14 +23,18 @@
 {% block content %}
 
 <div class="row">
-    <div class="col s12 m7">
+    <div class="col s12 m9">
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/category/video_games_popularity.png') }}">
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                <ol>
+                    <li>Strong seasonality is evident in review volume. January shows the highest peak followed by December then September</li>
+                    <li>The positive review ratios remain relatively consistent throughout the year, ranging from 0.85 to 0.88, suggesting that regardless of volume fluctuations, the overall sentiment toward video games remains fairly stable.</li>
+                    <li>There's a clear pattern of higher review volumes during the holiday season when new games are typically released and purchased as gifts.</li>
+                    <li>After the January peak, there's a sharp decline through February, followed by a more gradual decline through late summer, before an upward trend begins in October through December.</li>
+                </ol>
             </div>
         </div>
 

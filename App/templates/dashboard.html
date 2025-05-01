@@ -27,7 +27,6 @@
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/sentiment/sentiment_vs_review_length.png') }}">
-                <!--<span class="card-title">Card Title 2</span>-->
             </div>
             <div class="card-content">
                 <p>The plot reveals that longer reviews tend to indicate a positive sentiment whereas shorter reviews indicate negative. 
@@ -38,11 +37,12 @@
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/dataset/top_10_positive_negative_words.png') }}">
-                <!--<span class="card-title">Card Title 2</span>-->
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                <ul>
+                    <li>- "Love" and "great" are the most frequent positive words, both with coefficients around 20</li>
+                    <li>- "Awful," "poor," and "horrible" are the most frequent negative words with coefficients around -12</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -51,22 +51,29 @@
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/dataset/word_cloud.png') }}">
-                <!--<span class="card-title">Card Title 2</span>-->
             </div>
             <div class="card-content">
-                <p>This is the second card. It is placed next to the first card in a two-column layout.
-                You can add any content here as needed.</p>
+                <ul>
+                    <li>- The positive terminology "great", "love" and "good quality" suggest generally favourable reviews</li>
+                    <li>- Words like "use", "used" and "work" indicate people are discussing their practical experiences with the product/service</li>
+                </ul>
             </div>
         </div>
 
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/dataset/positive_vs_negative_ratings.png') }}">
-                <!--<span class="card-title">Card Title 2</span>-->
             </div>
             <div class="card-content">
-                <p>This is the second card. It is placed next to the first card in a two-column layout.
-                You can add any content here as needed.</p>
+                <ol>
+                    <li>Positive Ratings (>3) - approximately 450,000</li>
+                    <li>Negative Ratings (<3) - approximately 60,000</li>
+                </ol>
+                <p>
+                    Positive ratings signifcantly outnumber negative ratings suggesting the products/services
+                    have been favourably received by the vast majority of reviewers with only a small percentage
+                    of negative assessments.
+                </p>
             </div>
         </div>
     </div>
