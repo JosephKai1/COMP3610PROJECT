@@ -4,7 +4,6 @@ from .trends import trend_views
 from .analysis import analysis_views
 from .comparison import comparison_views
 from .auth import auth_views
-from .admin import setup_admin
 
 # Blueprints must be added to this list
 views = [
