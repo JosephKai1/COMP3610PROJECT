@@ -22,6 +22,61 @@
 
 {% block content %}
 
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/sentiment/sentiment_vs_review_length.png') }}">
+            </div>
+            <div class="card-content">
+                <p>The plot reveals that longer reviews tend to indicate a positive sentiment whereas shorter reviews indicate negative. 
+                    This may be due to customers displaying excitement and encouraging others to purchase particular products.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/dataset/top_10_positive_negative_words.png') }}">
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>- "Love" and "great" are the most frequent positive words, both with coefficients around 20</li>
+                    <li>- "Awful," "poor," and "horrible" are the most frequent negative words with coefficients around -12</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <div class="col s12 m5">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/dataset/word_cloud.png') }}">
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>- The positive terminology "great", "love" and "good quality" suggest generally favourable reviews</li>
+                    <li>- Words like "use", "used" and "work" indicate people are discussing their practical experiences with the product/service</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/dataset/positive_vs_negative_ratings.png') }}">
+            </div>
+            <div class="card-content">
+                <ol>
+                    <li>Positive Ratings (>3) - approximately 450,000</li>
+                    <li>Negative Ratings (<3) - approximately 60,000</li>
+                </ol>
+                <p>
+                    Positive ratings signifcantly outnumber negative ratings suggesting the products/services
+                    have been favourably received by the vast majority of reviewers with only a small percentage
+                    of negative assessments.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

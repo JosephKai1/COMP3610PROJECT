@@ -15,8 +15,8 @@
 {% endblock %}
 
 {% extends "layout.html" %}
-{% block title %}Analysis{% endblock %}
-{% block page %}Analysis{% endblock %}
+{% block title %}Comparison{% endblock %}
+{% block page %}Comparison{% endblock %}
 
 {{ super() }}
 
@@ -26,14 +26,16 @@
     <div class="col s12 m9">
         <div class="card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='images/category/video_games_popularity.png') }}">
+                <img src="{{ url_for('static', filename='images/category/video_games_ea_vs_nintendo_popularity.png') }}">
             </div>
             <div class="card-content">
                 <ol>
-                    <li>Strong seasonality is evident in review volume. January shows the highest peak followed by December then September</li>
-                    <li>The positive review ratios remain relatively consistent throughout the year, ranging from 0.85 to 0.88, suggesting that regardless of volume fluctuations, the overall sentiment toward video games remains fairly stable.</li>
-                    <li>There's a clear pattern of higher review volumes during the holiday season when new games are typically released and purchased as gifts.</li>
-                    <li>After the January peak, there's a sharp decline through February, followed by a more gradual decline through late summer, before an upward trend begins in October through December.</li>
+                    <li>Nintendo consistently receives more total reviews than Electronic Arts throughout the year.</li>
+                    <li>Both brands show seasonal patterns, peaking in January, March and December likely due to holiday releases</li>
+                    <li>Lowest review volumes in September for Nintendo and April-September for Electronic Arts</li>
+                    <li>The numbers above each data point (ranging from 0.77 to 0.94) appear to represent positive sentiment scores or rating averages.</li>
+                    <li>Nintendo's review count ranges from about 400 to 950, while Electronic Arts ranges from about 300 to 600.</li>
+                    <li>Both companies show recovery in review volumes toward the end of the year, with Nintendo experiencing a particularly strong upward trend from September through December.</li>
                 </ol>
             </div>
         </div>
