@@ -158,3 +158,8 @@ node_modules/
 
 # Dataset CSV
 amazon_reviews.csv
+
+#Model Things
+embedded.json
+glove.6B.100d.txt
+lstm_model.keras
