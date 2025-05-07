@@ -163,3 +163,8 @@ amazon_reviews.csv
 embedded.json
 glove.6B.100d.txt
 lstm_model.keras
+
+#csv files
+csv's/
+custom_dataset/
+cleaned_reviews.csv
