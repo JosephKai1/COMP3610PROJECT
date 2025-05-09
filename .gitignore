@@ -158,6 +158,7 @@ node_modules/
 
 # Dataset CSV
 amazon_reviews.csv
+FinalPredictions.csv
 
 #Model Things
 embedded.json
