@@ -180,8 +180,9 @@
 
 <!-- Main visualization cards - 2 cards per row for balanced visibility -->
 <div id="visualization-cards" class="row">
-    <!-- Card 1 -->
+
     <div class="col s12 m6">
+        <!-- Card 1 -->
         <div class="card">
             <div class="card-title" id="card1-title">CPS Growth</div>
             <div class="card-image">
@@ -191,10 +192,8 @@
                 <p id="card1-description">Analysis of growth patterns across category product segments</p>
             </div>
         </div>
-    </div>
-    
-    <!-- Card 2 -->
-    <div class="col s12 m6">
+
+        <!-- Card 3 -->
         <div class="card">
             <div class="card-title" id="card2-title">Top Brand Product Pairs</div>
             <div class="card-image">
@@ -206,8 +205,9 @@
         </div>
     </div>
     
-    <!-- Card 3 -->
+    
     <div class="col s12 m6">
+        <!-- Card 2 -->
         <div class="card">
             <div class="card-title" id="card3-title">CPS Fluctuation</div>
             <div class="card-image">
@@ -217,10 +217,8 @@
                 <p id="card3-description">Fluctuation analysis of category product segments</p>
             </div>
         </div>
-    </div>
-    
-    <!-- Card 4 -->
-    <div class="col s12 m6">
+
+        <!-- Card 4 -->
         <div class="card">
             <div class="card-title" id="card4-title">Category Popularity</div>
             <div class="card-image">
@@ -231,6 +229,7 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 <script>
@@ -258,14 +257,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update card titles and descriptions based on category
         if (category === 'All') {
             // Special paths and titles for the 'All' category
-            document.getElementById('card1-title').textContent = 'CPS Growth';
-            document.getElementById('card2-title').textContent = 'Top Brand Product Pairs';
-            document.getElementById('card3-title').textContent = 'CPS Fluctuation';
+            document.getElementById('card1-title').textContent = 'Category Popularity Score (CPS) Growth';
+            document.getElementById('card2-title').textContent = 'Top Brand Per Catergory Popularity Score (BPCPS)';
+            document.getElementById('card3-title').textContent = 'Category Popularity Score (CPS) Fluctuation';
             document.getElementById('card4-title').textContent = 'Category Popularity';
             
-            document.getElementById('card1-description').textContent = 'Analysis of growth patterns across category product segments';
+            document.getElementById('card1-description').textContent = 'Analysis of growth patterns of category popularity scores over time';
             document.getElementById('card2-description').textContent = 'Top brand-product category pairs by performance';
-            document.getElementById('card3-description').textContent = 'Fluctuation analysis of category product segments';
+            document.getElementById('card3-description').textContent = 'Fluctuation analysis of category popularity score';
             document.getElementById('card4-description').textContent = 'Overall category popularity trends';
             
             // Special paths for the 'All' category
@@ -275,15 +274,15 @@ document.addEventListener('DOMContentLoaded', function() {
             monthlyCpsImg.src = baseUrl + category + '/category_popularity.png';
         } else {
             // Standard titles for all other categories
-            document.getElementById('card1-title').textContent = 'Growth by PCPs';
-            document.getElementById('card2-title').textContent = 'Max PP by CPS';
-            document.getElementById('card3-title').textContent = 'Max PP by BPS';
-            document.getElementById('card4-title').textContent = 'Monthly CPS';
+            document.getElementById('card1-title').textContent = 'Category Popularity Score (CPS) Growth';
+            document.getElementById('card2-title').textContent = 'Max Product Per Category Popularity Score (PPCPS)';
+            document.getElementById('card3-title').textContent = 'Max Product Per Brand Popularity Score (PPBPS)';
+            document.getElementById('card4-title').textContent = 'Monthly Category Popularity Score (CPS)';
             
-            document.getElementById('card1-description').textContent = 'Analysis of growth patterns by Product Category Pairs (PCPs)';
-            document.getElementById('card2-description').textContent = 'Maximum product popularity by category product segments';
-            document.getElementById('card3-description').textContent = 'Maximum product popularity by brand product segments';
-            document.getElementById('card4-description').textContent = 'Monthly trends in category popularity segments';
+            document.getElementById('card1-description').textContent = 'Analysis of growth patterns by Product Category Score (PCS)';
+            document.getElementById('card2-description').textContent = 'Maximum product per category popularity score';
+            document.getElementById('card3-description').textContent = 'Maximum product per brand popularity score';
+            document.getElementById('card4-description').textContent = 'Monthly trends in category popularity score';
             
             // Standard paths for all other categories
             growthBpcpsImg.src = baseUrl + category + '/growth_bpcps.png';
