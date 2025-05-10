@@ -7,8 +7,72 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 <style>
+      
+    .card-image {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+    }
     
+    .card-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
     
+    .preloader-wrapper {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    /* Card title styling */
+    .card .card-title {
+        font-weight: 500;
+        font-size: 18px;
+        color: white;
+        background-color: #424242;
+        width: 100%;
+        padding: 10px 15px;
+        margin: 0;
+    }
+    
+    /* Make card image containers adapt to image content */
+    .card .card-image {
+        min-height: 100px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        overflow: hidden;
+    }
+
+    /* Ensure images fit properly within the card */
+    .card .card-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Make cards adapt to content height */
+    .card {
+        height: auto;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure consistent styling for card content */
+    .card .card-content {
+        padding: 15px;
+    }
     
 </style>
 
@@ -22,45 +86,74 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m9">
+<!-- Main visualization cards - 2 cards per row for balanced visibility -->
+<div id="visualization-cards" class="row">
+
+    <div class="col s12 m6">
+        <!-- Card 1 -->
         <div class="card">
+            <div class="card-title">Video Games Popularity</div>
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/category/Video Games/popularity.png') }}">
             </div>
             <div class="card-content">
-                <ol>
-                    <li>Strong seasonality is evident in review volume. January shows the highest peak followed by December</li>
-                    <li>The positive review ratios remain relatively consistent throughout the year, ranging from 0.85 to 0.88, suggesting that regardless of volume fluctuations, the overall sentiment toward video games remains fairly stable.</li>
-                    <li>There's a clear pattern of higher review volumes during the holiday season when new games are typically released and purchased as gifts.</li>
-                    <li>After the January peak, there's a sharp decline through February, followed by a more gradual decline through late summer, before an upward trend begins in October through December.</li>
-                </ol>
+                <ul>
+                    <li>- Strong seasonality is evident in review volume. January shows the highest peak followed by December</li>
+                    <li>- The positive review ratios remain relatively consistent throughout the year, ranging from 0.85 to 0.88, suggesting that regardless of volume fluctuations, the overall sentiment toward video games remains fairly stable.</li>
+                    <li>- There's a clear pattern of higher review volumes during the holiday season when new games are typically released and purchased as gifts.</li>
+                    <li>- After the January peak, there's a sharp decline through February, followed by a more gradual decline through late summer, before an upward trend begins in October through December.</li>
+                </ul>
             </div>
         </div>
 
-        <!-- Insert additional main cards here -->
-         
-    </div>
-
-    <!--
-
-    <div class="col s12 m5">
+        <!-- Card 3 -->
         <div class="card">
+            <div class="card-title">Brand Popularity vs Sentiment Ratio</div>
             <div class="card-image">
-                <img src="{{ url_for('static', filename='images/category/video_games_brand_popularity.png') }}">    
+                <img src="{{ url_for('static', filename='images/category/Video Games/popularity_vs_sentiment_brand.png') }}">
             </div>
             <div class="card-content">
-                <p>This is the second card. It is placed next to the first card in a two-column layout.
-                You can add any content here as needed.</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6">
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-title">Popularity vs Sentiment Ratio</div>
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/category/Video Games/popularity_vs_sentiment.png') }}">
+            </div>
+            <div class="card-content">
+                <p></p>
             </div>
         </div>
 
-        Insert additional side cards here
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-title">Nintendo Popularity vs Sentiment</div>
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/category/Video Games/popularity_vs_sentiment_nintendo.png') }}">
+            </div>
+            <div class="card-content">
+                <p></p>
+            </div>
+        </div>
 
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="card-title">Nintendo Popularity vs Sentiment Multi-Year</div>
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/category/Video Games/popularity_vs_sentiment_nintendo_multi.png') }}">
+            </div>
+            <div class="card-content">
+                <p></p>
+            </div>
+        </div>
     </div>
     
-    -->
-
 </div>
 
 {% endblock %}
