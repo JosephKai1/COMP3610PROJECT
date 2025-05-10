@@ -5,11 +5,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
+    /* Removed .card-title styling that placed it over the image */
     
+    #category-select-container {
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
     
+    .card-image {
+        position: relative;
+        max-height: 300px;
+        overflow: hidden;
+    }
     
+    .card-image img {
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .preloader-wrapper {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    /* New style for card title below image */
+    .card-title-below {
+        background-color: #424242;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    
+    /* Fix for consistent card heights */
+    .card .card-image {
+        height: 250px;
+    }
 </style>
 
 {% endblock %}
@@ -22,47 +64,246 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m7">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ url_for('static', filename='images/category/All/category_popularity.png') }}">
-            </div>
-            <div class="card-content">
-                <ol>
-                    <li>Strong seasonality is evident across nearly all categories. January shows the highest peak for most categories. December shows the second highest peak. Mid-year (May-September) generally shows lower review volumes</li>
-                    <li>The categories form distinct tiers by review volume. Top tier (10,000-17,000 reviews): Gift Cards, Arts/Crafts & Sewing, and All Electronics. Middle tier (5,000-10,000 reviews): Automotive, Handmade, Amazon Home, and several others. Lower tier (under 5,000 reviews): Many niche/specialized categories</li>
-                    <li>Gift Cards shows the most dramatic seasonal variation, with a very pronounced January peak around 17,000 reviews and December spike to about 12,500 reviews.</li>
-                    <li>Most categories follow a similar pattern of high winter activity, dropping in February, relatively stable through summer, and rising again from October through December.</li>
-                    <li>The consistency of patterns across categories suggests universal consumer behavior trends related to holiday shopping seasons, with post-holiday reviews in January and pre-holiday purchasing in December.</li>
-                </ol>
-            </div>
+<!-- Category selector -->
+<div id="category-select-container" class="row">
+    <div class="col s12">
+        <h5>Select Category</h5>
+        <div class="input-field">
+            <select id="category-select" class="browser-default">
+                <option value="All" selected>All</option>
+                <option value="All Beauty">All Beauty</option>
+                <option value="All Electronics">All Electronics</option>
+                <option value="Amazon Devices">Amazon Devices</option>
+                <option value="AMAZON FASHION">Amazon Fashion</option>
+                <option value="Amazon Fire TV">Amazon Fire TV</option>
+                <option value="Amazon Home">Amazon Home</option>
+                <option value="Apple Products">Apple Products</option>
+                <option value="Appliances">Appliances</option>
+                <option value="Appstore for Android">Appstore for Android</option>
+                <option value="Arts, Crafts & Sewing">Arts, Crafts & Sewing</option>
+                <option value="Audible Audiobooks">Audible Audiobooks</option>
+                <option value="Automotive">Automotive</option>
+                <option value="Baby">Baby</option>
+                <option value="Books">Books</option>
+                <option value="Buy a Kindle">Buy a Kindle</option>
+                <option value="Camera & Photo">Camera & Photo</option>
+                <option value="Car Electronics">Car Electronics</option>
+                <option value="Cell Phones & Accessories">Cell Phones & Accessories</option>
+                <option value="Collectible Coins">Collectible Coins</option>
+                <option value="Collectibles & Fine Art">Collectibles & Fine Art</option>
+                <option value="Computers">Computers</option>
+                <option value="Digital Music">Digital Music</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Fine Art">Fine Art</option>
+                <option value="Fine Phone">Fine Phone</option>
+                <option value="Gift Cards">Gift Cards</option>
+                <option value="GPS & Navigation">GPS & Navigation</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Handmade">Handmade</option>
+                <option value="Health & Personal Care">Health & Personal Care</option>
+                <option value="Home Audio & Theater">Home Audio & Theater</option>
+                <option value="Industrial & Scientific">Industrial & Scientific</option>
+                <option value="Magazine Subscriptions">Magazine Subscriptions</option>
+                <option value="Movies & TV">Movies & TV</option>
+                <option value="Musical Instruments">Musical Instruments</option>
+                <option value="Office Products">Office Products</option>
+                <option value="Pet Supplies">Pet Supplies</option>
+                <option value="Portable Audio & Accessories">Portable Audio & Accessories</option>
+                <option value="Premium Beauty">Premium Beauty</option>
+                <option value="Prime Video">Prime Video</option>
+                <option value="Software">Software</option>
+                <option value="Sports & Outdoors">Sports & Outdoors</option>
+                <option value="Sports Collectibles">Sports Collectibles</option>
+                <option value="Tools & Home Improvement">Tools & Home Improvement</option>
+                <option value="Toys & Games">Toys & Games</option>
+                <option value="Video Games">Video Games</option>
+            </select>
         </div>
-
-        <!-- Insert additional main cards here -->
-         
-    </div>
-
-    <div class="col s12 m5">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ url_for('static', filename='images/category/Video Games/popularity_brand.png') }}">
-            </div>
-            <div class="card-content">
-                <ol>
-                    <li>Nintendo consistently leads in review volume throughout the year, with pronounced peaks in January and December, and its lowest point in September</li>
-                    <li>Electronic Arts holds the second position most months, following a similar seasonal pattern with January and December peaks</li>
-                    <li>All brands show a general U-shaped trend across the year, with higher review volumes in winter months (January, December) and lower volumes in mid-year (June-September)</li>
-                    <li>Square Enix (pink line) shows a distinctive spike in April, deviating from other brands' patterns</li>
-                    <li>September appears to be the lowest month for reviews across most brands, likely representing the calm before the holiday release season</li>
-                    <li>All brands show recovery in review volumes from October through December, reflecting the holiday gaming season</li>
-                </ol>
-            </div>
-        </div>
-
-        <!-- Insert additional side cards here -->
-
     </div>
 </div>
+
+<!-- Loading indicator -->
+<div id="loading" class="center-align hidden">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional info text at the top -->
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel">
+            <span id="category-info-text" class="flow-text">
+                Showing visualization data for <b>All Categories</b>. Select a different category from the dropdown above to view its specific data.
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Main visualization cards -->
+<div id="visualization-cards" class="row">
+    <!-- Card 1 -->
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-image">
+                <img id="growth-bpcps-img" src="{{ url_for('static', filename='images/category/All/cps_growth.png') }}">
+                <!-- Title removed from here -->
+            </div>
+            <!-- Title moved below image -->
+            <div class="card-title-below" id="card1-title">CPS Growth</div>
+            <div class="card-content">
+                <p id="card1-description">Analysis of growth patterns across category product segments</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-image">
+                <img id="max-ppcps-img" src="{{ url_for('static', filename='images/category/All/top_2_bpcps.png') }}">
+                <!-- Title removed from here -->
+            </div>
+            <!-- Title moved below image -->
+            <div class="card-title-below" id="card2-title">Top Brand Product Pairs</div>
+            <div class="card-content">
+                <p id="card2-description">Top brand-product category pairs by performance</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-image">
+                <img id="max-ppbps-img" src="{{ url_for('static', filename='images/category/All/cps_fluctuation.png') }}">
+                <!-- Title removed from here -->
+            </div>
+            <!-- Title moved below image -->
+            <div class="card-title-below" id="card3-title">CPS Fluctuation</div>
+            <div class="card-content">
+                <p id="card3-description">Fluctuation analysis of category product segments</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 4 -->
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-image">
+                <img id="monthly-cps-img" src="{{ url_for('static', filename='images/category/All/category_popularity.png') }}">
+                <!-- Title removed from here -->
+            </div>
+            <!-- Title moved below image -->
+            <div class="card-title-below" id="card4-title">Category Popularity</div>
+            <div class="card-content">
+                <p id="card4-description">Overall category popularity trends</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categorySelect = document.getElementById('category-select');
+    const categoryTitleElem = document.getElementById('category-title');
+    const brandCategoryNameElem = document.getElementById('brand-category-name');
+    const loadingElem = document.getElementById('loading');
+    
+    // Image elements
+    const growthBpcpsImg = document.getElementById('growth-bpcps-img');
+    const maxPpcpsImg = document.getElementById('max-ppcps-img');
+    const maxPpbpsImg = document.getElementById('max-ppbps-img');
+    const monthlyCpsImg = document.getElementById('monthly-cps-img');
+    
+    // Function to update images based on selected category
+    function updateCategory(category) {
+        // Show loading indicator
+        loadingElem.classList.remove('hidden');
+        
+        // Update category info text
+        document.getElementById('category-info-text').innerHTML = 'Showing visualization data for <b>' + category + '</b> category.';
+        
+        // Update image sources
+        const baseUrl = "{{ url_for('static', filename='images/category/') }}";
+        
+        // Update card titles and descriptions based on category
+        if (category === 'All') {
+            // Special paths and titles for the 'All' category
+            document.getElementById('card1-title').textContent = 'CPS Growth';
+            document.getElementById('card2-title').textContent = 'Top Brand Product Pairs';
+            document.getElementById('card3-title').textContent = 'CPS Fluctuation';
+            document.getElementById('card4-title').textContent = 'Category Popularity';
+            
+            document.getElementById('card1-description').textContent = 'Analysis of growth patterns across category product segments';
+            document.getElementById('card2-description').textContent = 'Top brand-product category pairs by performance';
+            document.getElementById('card3-description').textContent = 'Fluctuation analysis of category product segments';
+            document.getElementById('card4-description').textContent = 'Overall category popularity trends';
+            
+            // Special paths for the 'All' category
+            growthBpcpsImg.src = baseUrl + category + '/cps_growth.png';
+            maxPpcpsImg.src = baseUrl + category + '/top_2_bpcps.png';
+            maxPpbpsImg.src = baseUrl + category + '/cps_fluctuation.png';
+            monthlyCpsImg.src = baseUrl + category + '/category_popularity.png';
+        } else {
+            // Standard titles for all other categories
+            document.getElementById('card1-title').textContent = 'Growth by PCPs';
+            document.getElementById('card2-title').textContent = 'Max PP by CPS';
+            document.getElementById('card3-title').textContent = 'Max PP by BPS';
+            document.getElementById('card4-title').textContent = 'Monthly CPS';
+            
+            document.getElementById('card1-description').textContent = 'Analysis of growth patterns by Product Category Pairs (PCPs)';
+            document.getElementById('card2-description').textContent = 'Maximum product popularity by category product segments';
+            document.getElementById('card3-description').textContent = 'Maximum product popularity by brand product segments';
+            document.getElementById('card4-description').textContent = 'Monthly trends in category popularity segments';
+            
+            // Standard paths for all other categories
+            growthBpcpsImg.src = baseUrl + category + '/growth_bpcps.png';
+            maxPpcpsImg.src = baseUrl + category + '/max_ppcps.png';
+            maxPpbpsImg.src = baseUrl + category + '/max_ppbps.png';
+            monthlyCpsImg.src = baseUrl + category + '/monthly_cps.png';
+        }
+        
+        // Hide loading indicator after all images have loaded
+        const allImages = [growthBpcpsImg, maxPpcpsImg, maxPpbpsImg, monthlyCpsImg];
+        let imagesLoaded = 0;
+        
+        allImages.forEach(img => {
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === allImages.length) {
+                    loadingElem.classList.add('hidden');
+                }
+            };
+            
+            img.onerror = () => {
+                console.error('Failed to load image:', img.src);
+                imagesLoaded++;
+                if (imagesLoaded === allImages.length) {
+                    loadingElem.classList.add('hidden');
+                }
+            };
+        });
+    }
+    
+    // Listen for category changes
+    categorySelect.addEventListener('change', function() {
+        updateCategory(this.value);
+    });
+    
+    // Initialize with the default category
+    updateCategory('All');
+});
+</script>
 
 {% endblock %}
