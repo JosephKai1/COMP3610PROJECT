@@ -20,6 +20,9 @@ Understanding customer satisfaction based on product reviews can provide valuabl
 - Analyze product categories to identify emerging market trends
 - Compare the sentiment between different brands for a competitive analysis
 
+# How to use:
+Click run all in the dashboard.ipynb file and it should open in your browser
+
 
 <!--
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uwidcit/flaskmvc)
