@@ -1,4 +1,4 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/BIG-DATA-PROJ/COMP3610)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JosephKai1/COMP3610PROJECT)
 
 # Group Members
 - Saeed Khan (816035385)
